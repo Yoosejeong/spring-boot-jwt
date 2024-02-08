@@ -4,9 +4,11 @@ import com.example.CustomLecture.dto.JoinDTO;
 import com.example.CustomLecture.service.JoinService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @ResponseBody
 public class JoinController {
 
@@ -18,7 +20,7 @@ public class JoinController {
     }
 
     @PostMapping("/join")
-    public String joinProcess(JoinDTO joinDTO){
+    public String joinProcess(@RequestBody  JoinDTO joinDTO){
 
         joinService.joinProcess(joinDTO);
 
